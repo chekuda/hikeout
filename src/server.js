@@ -2,7 +2,7 @@ const path = require('path');
 require('dotenv').config({ silent: true, path: path.resolve(__dirname, '..', '.env') });
 
 const next = require('next');
-const express = require('express');
+const app = require('./server/app');
 
 const nextConfig = require('next-react-app-scripts/config');
 
@@ -14,8 +14,6 @@ const nextApp = next({
 const handle = nextApp.getRequestHandler();
 
 nextApp.prepare().then(() => {
-  const app = express();
-
   app.set('port', parseInt(process.env.PORT, 10) || 2000);
 
   app.get('*', (req, res) => {
