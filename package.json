@@ -1,0 +1,33 @@
+{
+  "name": "hikeout",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "next-react-app-scripts": "3.0.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "cross-env": "^5.1.4",
+    "express": "^4.16.3"
+  },
+  "target": {
+    "node": "8.9.4",
+    "browsers": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  },
+  "scripts": {
+    "test": "jest-run --env=jsdom",
+    "build": "next-react-app-scripts build",
+    "start": "next-react-app-scripts start",
+    "prod": "cross-env NODE_ENV=production next-react-app-scripts start"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "jest-run": "^1.0.0"
+  }
+}
