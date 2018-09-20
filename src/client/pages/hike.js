@@ -20,24 +20,24 @@ const styles = theme => ({
     color: theme.palette.primary.dark,
     textTransform: 'uppercase',
     letterSpacing: '2.5px'
-  },
-})
+  }
+});
 
 class Hike extends Component {
   state = {
     tabEnable: 0
   }
 
-  componentDidMount(){
-    const currentHikeId = new URL(window.location).searchParams.get('id')
+  componentDidMount() {
+    const currentHikeId = new URL(window.location).searchParams.get('id');
 
-    fetch('https://granite-camilla.codio.io/hikeData.json#')
+    fetch(`/api/hikes/${currentHikeId}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          currentHike: data.europe.find(ele => ele.id == currentHikeId)
-        })
-      })
+          currentHike: data
+        });
+      });
   }
 
   handleChange = (_, value) => {
@@ -71,8 +71,8 @@ class Hike extends Component {
           { tabEnable === 0 && <HikeInfo hike={currentHike}/>}
           { tabEnable === 1 && <div>SECOND SLIDE</div> }
       </Fragment>
-    )
+    );
   }
 }
 
-export default withStyles(styles)(Hike)
+export default withStyles(styles)(Hike);

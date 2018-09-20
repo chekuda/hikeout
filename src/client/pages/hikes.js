@@ -54,7 +54,7 @@ class Hikes extends React.Component {
   handleRedirect(id) {
     Router.replace(`/hike?id=${id}`);
   }
-  
+
   render() {
     const { classes } = this.props;
 

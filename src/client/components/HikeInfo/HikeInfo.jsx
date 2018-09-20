@@ -5,14 +5,15 @@ import Typography from '@material-ui/core/Typography'
 const styles = (theme) => ({
   topImage: {
     position: 'relative',
-    margin: '10px 5px',
-    height: '150px',
-    borderRadius: '5px',
-    boxShadow: `0 5px 5px ${theme.palette.colors.darkGrey}`,
-    cursor: 'pointer'
+    margin: 0,
+    height: '200px',
+    boxShadow: `0 5px 5px ${theme.palette.colors.darkGrey}`
   },
   description: {
-    color: theme.palette.colors.black
+    color: theme.palette.colors.black,
+    margin: '20px',
+    letterSpacing: '0.5px',
+    fontSize: '17px'
   }
 })
 
@@ -24,13 +25,13 @@ class HikeInfo extends Component {
       <Fragment>
           <section className={classes.topImage}
           style={{
-            background: `linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(${hike.imageList[0]}) no-repeat`,
+            background: `url(${hike.imageList[0]}) no-repeat`,
             backgroundSize: 'cover'
           }}
           >
           </section>
           <section>
-            <Typography className={classes.description} variant="title" component="div">
+            <Typography className={classes.description} variant="bodi1">
               {hike.description}
             </Typography>
           </section>
