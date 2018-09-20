@@ -8,9 +8,8 @@ const styles = theme => ({
   root: {
     height: '100vh',
     width: '100vw',
-    backgroundImage:
-      'url("https://cdn.runrepeat.com/storage/uploads/research/Award%20-%20Most%20Livable%20Hiking%20Towns/Hiking%20Town%201.jpg")',
-    backgroundRepeat: 'no-repeat',
+    background:
+      'url(https://images.pexels.com/photos/868097/pexels-photo-868097.jpeg?auto=compress&cs=tinysrgb&h=350) no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   },
@@ -18,6 +17,9 @@ const styles = theme => ({
     width: '100vw',
     position: 'fixed',
     bottom: 0
+  },
+  buttonItem: {
+    borderRadius: 0
   }
 });
 
@@ -37,7 +39,7 @@ class Index extends React.Component {
               <Button
                 variant="contained"
                 color="primary"
-                className={classes.button}
+                className={classes.buttonItem}
                 fullWidth={true}
                 onClick={this.handleRedirect}
               >
@@ -48,7 +50,7 @@ class Index extends React.Component {
               <Button
                 variant="contained"
                 color="secondary"
-                className={classes.button}
+                className={classes.buttonItem}
                 fullWidth={true}
               >
                 Log In
