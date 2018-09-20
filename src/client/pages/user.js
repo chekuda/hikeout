@@ -71,7 +71,7 @@ class Index extends React.Component {
     //TO-DO
     //Submit user selection to backend
     console.log('submit form');
-    Router.replace('/hikes');
+    Router.push('/hikes');
   };
 
   render() {
