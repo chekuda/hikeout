@@ -1,81 +1,44 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
   root: {
-    textAlign: 'center',
-    paddingTop: theme.spacing.unit * 20
+    backgroundColor: 'grey',
+    height: '100vh',
+    width: '100%'
   },
-  card: {
-    maxWidth: 345
-  },
-  media: {
-    height: 140
+  buttonContiner: {
+    width: '100%',
+    position: 'fixed',
+    bottom: 0,
   }
-});
+})
 
 class Index extends React.Component {
-  state = {
-    open: false
-  };
-
-  handleClose = () => {
-    this.setState({
-      open: false
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true
-    });
-  };
-
   render() {
-    const { classes } = this.props;
-    const { open } = this.state;
+    const { classes } = this.props
 
     return (
       <div className={classes.root}>
-        <Typography variant="display1" gutterBottom>
-          Material-UI
-        </Typography>
-        <Card className={classes.card}>
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image="/static/images/cards/contemplative-reptile.jpg"
-              title="Contemplative Reptile"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="headline" component="h2">
-                Lizard
-              </Typography>
-              <Typography component="p">
-                Lizards are a widespread group of squamate reptiles, with over 6,000 species,
-                ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
-            </Button>
-          </CardActions>
-        </Card>
+        <section className={classes.buttonContiner}>
+          <Grid container>
+            <Grid item xs={6}>
+              <Button variant="contained" color="primary" className={classes.button} fullWidth={true}>
+                Start Now
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button variant="contained" color="secondary" className={classes.button} fullWidth={true}>
+                Log In
+              </Button>
+            </Grid>
+          </Grid>
+        </section>
       </div>
-    );
+    )
   }
 }
 
-export default withStyles(styles)(Index);
+export default withStyles(styles)(Index)
