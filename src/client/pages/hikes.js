@@ -42,7 +42,7 @@ class Hikes extends React.Component {
   };
 
   componentDidMount() {
-    fetch('/api/hikes')
+    fetch('http://localhost:3000/api/hikes')
       .then(res => res.json())
       .then(data => {
         this.setState({
