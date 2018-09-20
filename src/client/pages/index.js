@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Router from 'next/router';
 
+import './index.css';
+
 const logoPNG = require('../static/logo.png');
 
 const styles = theme => ({
@@ -31,7 +33,7 @@ const styles = theme => ({
 
 class Index extends React.Component {
   handleRedirect() {
-    Router.replace('/user');
+    Router.push('/user');
   }
 
   render() {

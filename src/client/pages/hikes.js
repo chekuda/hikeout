@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import CustomCard from '../components/CustomCard';
+import Layout from '../components/Layout';
 
 const styles = theme => ({
   root: {
@@ -52,39 +53,41 @@ class Hikes extends React.Component {
   }
 
   handleRedirect(id) {
-    Router.replace(`/hike?id=${id}`);
+    Router.push(`/hike?id=${id}`);
   }
 
   render() {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-        <Typography className={classes.topSection} variant="title" component="h1">
-          Recomended Hikes
-        </Typography>
-        {this.state.loaderEnable ? (
-          <div className={classes.center}>
-            <CircularProgress className={classes.progress} size={100} color="primary" />
-          </div>
-        ) : (
-          <section className="hike-lists">
-            {this.state.hikeList.map(hike => {
-              return (
-                <CustomCard
-                  key={hike.id}
-                  bkImage={hike.imageList[0]}
-                  title={hike.title}
-                  rate={hike.stars}
-                  difficulty={hike.dificulty}
-                  time={`${hike.routes[0].hours}h`}
-                  handleClick={() => this.handleRedirect(hike.id)}
-                />
-              );
-            })}
-          </section>
-        )}
-      </div>
+      <Layout title="Hikes">
+        <div className={classes.root}>
+          <Typography className={classes.topSection} variant="title" component="h1">
+            Recommended Hikes
+          </Typography>
+          {this.state.loaderEnable ? (
+            <div className={classes.center}>
+              <CircularProgress className={classes.progress} size={100} color="primary" />
+            </div>
+          ) : (
+            <section className="hike-lists">
+              {this.state.hikeList.map(hike => {
+                return (
+                  <CustomCard
+                    key={hike.id}
+                    bkImage={hike.imageList[0]}
+                    title={hike.title}
+                    rate={hike.stars}
+                    difficulty={hike.dificulty}
+                    time={`${hike.routes[0].hours}h`}
+                    handleClick={() => this.handleRedirect(hike.id)}
+                  />
+                );
+              })}
+            </section>
+          )}
+        </div>
+      </Layout>
     );
   }
 }

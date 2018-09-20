@@ -1,12 +1,13 @@
-import React, { Component, Fragment } from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
-import AppBar from '@material-ui/core/AppBar'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 import HikeInfo from '../components/HikeInfo'
-import HikeSights from '../components/HikeSights/HikeSights';
+import HikeSights from '../components/HikeSights/HikeSights'
+import Layout from '../components/Layout';
 
 const styles = theme => ({
   root: {
@@ -27,7 +28,7 @@ const styles = theme => ({
 class Hike extends Component {
   state = {
     tabEnable: 0
-  }
+  };
 
   componentDidMount() {
     const currentHikeId = new URL(window.location).searchParams.get('id');
@@ -42,21 +43,19 @@ class Hike extends Component {
   }
 
   handleChange = (_, value) => {
-    this.setState({ tabEnable: value })
-  }
+    this.setState({ tabEnable: value });
+  };
 
   render() {
-    const { classes } = this.props
-    const { tabEnable, currentHike } = this.state
+    const { classes } = this.props;
+    const { tabEnable, currentHike } = this.state;
 
-    if(!currentHike) return null
+    if (!currentHike) return null;
 
     return (
-      <Fragment>
+      <Layout title="Route">
         <Typography className={classes.topSection} variant="title" component="h1">
-            {
-              currentHike.title
-            }
+          {currentHike.title}
         </Typography>
           <AppBar position="static" className={classes.root}>
             <Tabs
@@ -71,8 +70,8 @@ class Hike extends Component {
           </AppBar>
           { tabEnable === 0 && <HikeInfo hike={currentHike}/>}
           { tabEnable === 1 && <HikeSights hike={currentHike}/>}
-      </Fragment>
-    );
+      </Layout>
+    )
   }
 }
 
