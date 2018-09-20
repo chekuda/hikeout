@@ -7,6 +7,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import CustomCard from '../components/CustomCard';
 import Layout from '../components/Layout';
 
+import { myFetch } from '../helpers/fetchData'
+
 const styles = theme => ({
   root: {
     background: theme.palette.colors.white
@@ -42,11 +44,10 @@ class Hikes extends React.Component {
   };
 
   componentDidMount() {
-    fetch('/api-hikeout/hikes')
-      .then(res => res.json())
+    myFetch('europe')
       .then(data => {
         this.setState({
-          hikeList: data.europe,
+          hikeList: data,
           loaderEnable: false
         });
       });

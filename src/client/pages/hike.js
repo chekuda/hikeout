@@ -9,6 +9,8 @@ import HikeInfo from '../components/HikeInfo'
 import HikeSights from '../components/HikeSights/HikeSights'
 import Layout from '../components/Layout';
 
+import { myFetchId } from '../helpers/fetchData'
+
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.colors.white
@@ -33,13 +35,12 @@ class Hike extends Component {
   componentDidMount() {
     const currentHikeId = new URL(window.location).searchParams.get('id');
 
-    fetch(`/api-hikeout/hikes/${currentHikeId}`)
-      .then(res => res.json())
+    myFetchId('europe', currentHikeId)
       .then(data => {
         this.setState({
           currentHike: data
         });
-      });
+      })
   }
 
   handleChange = (_, value) => {
