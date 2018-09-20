@@ -25,7 +25,7 @@ class Hike extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          currentHike: data.europe.find(ele => ele.id == currentHikeId)
+          currentHike: data
         });
       });
   }
