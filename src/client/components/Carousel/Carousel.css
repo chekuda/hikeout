@@ -1,0 +1,87 @@
+.carousel {
+	position: relative;
+	display: flex;
+	height: 200px;
+	overflow: hidden;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	height: 200px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.slide.exited {
+	opacity: 0;
+}
+
+.slide.exiting {
+	opacity: 0;
+}
+
+.slide.entered {
+	opacity: 1;
+}
+
+.slide.entering {
+	opacity: 0.6;
+}
+
+.controls {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	height: 100%;
+}
+
+.arrows {
+	display: flex;
+	position: relative;
+	height: 100%;
+}
+
+.arrows .left {
+	height: 100%;
+	width: 40px;
+	position: absolute;
+	left: 0;
+}
+
+.arrows .left.onOver {
+	background-image: linear-gradient(90deg, rgba(53, 53, 53, 0.5), rgba(255, 255, 255, 0));
+}
+
+.arrows .right {
+	height: 100%;
+	width: 40px;
+	position: absolute;
+	right: 0;
+}
+
+.arrows .right.onOver {
+	background: linear-gradient(-90deg, rgba(53, 53, 53, 0.5), rgba(255, 255, 255, 0));
+}
+
+.arrows .fa-angle-left {
+	cursor: pointer;
+	position: absolute;
+	left: 7px;
+	top: 50%;
+	font-size: 40px;
+	transform: translateY(-50%);
+	color: #fff;
+}
+
+.arrows .fa-angle-right {
+	cursor: pointer;
+	position: absolute;
+	right: 7px;
+	top: 50%;
+	font-size: 40px;
+	transform: translateY(-50%);
+	color: #fff;
+}

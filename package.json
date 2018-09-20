@@ -13,6 +13,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-jss": "^8.6.1",
+    "react-transition-group": "^2.4.0",
     "styled-jsx": "^3.0.2"
   },
   "target": {
