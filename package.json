@@ -29,8 +29,8 @@
   "scripts": {
     "test": "jest-run --env=jsdom",
     "build": "next-react-app-scripts build",
-    "start": "next-react-app-scripts start",
-    "prod": "cross-env NODE_ENV=production next-react-app-scripts start"
+    "dev": "next-react-app-scripts start",
+    "start": "cross-env NODE_ENV=production next-react-app-scripts start"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
