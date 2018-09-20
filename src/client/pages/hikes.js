@@ -23,26 +23,48 @@ const styles = theme => ({
 })
 
 class Hikes extends React.Component {
+  state = {
+    hikeList: []
+  }
+
   handleRedirect() {
     Router.replace('/guest-user')
   }
 
+  componentDidMount(){
+    fetch('https://granite-camilla.codio.io/hikeData.json#')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          hikeList: data.europe
+        })
+      })
+  }
+
   render() {
     const { classes } = this.props
-
+    console.log(this.state.hikeList)
     return (
       <div className={classes.root}>
         <Typography className={classes.topSection} variant="title" component="h1">
           Recomended Hikes
         </Typography>
         <section className='hike-lists'>
-          <CustomCard
-            bkImage='https://i0.wp.com/clarens.co.za/wp-content/uploads/2018/03/hiking-trails-clarens.jpg'
-            title='Sevent Sisters'
-            rate={5}
-            difficulty='dificult'
-            time={'5h30m'}
-          />
+        {
+          this.state.hikeList.map(hike => {
+            console.log(hike)
+            return (
+              <CustomCard
+                key={hike.id}
+                bkImage={hike.imageList[0]}
+                title={hike.title}
+                rate={hike.stars}
+                difficulty={hike.dificulty}
+                time={`${hike.routes[0].hours}h`}
+              />
+            )
+          })
+        }
         </section>
       </div>
     )

@@ -10,21 +10,21 @@ const styles = (theme) => ({
     margin: '10px 5px',
     height: '150px',
     borderRadius: '5px',
-    boxShadow: `0 5px 5px ${theme.palette.colors.darkGrey}`
+    boxShadow: `0 5px 5px ${theme.palette.colors.darkGrey}`,
+    cursor: 'pointer'
   },
   topSection: {
     position: 'absolute',
-    width: '20px',
     height: '20px',
     right: 0,
-    margin: '5px',
-    borderRadius: '50%',
-    border: 'solid 1px #ffffff'
+    margin: '10px',
+    color: '#ffffff',
+    fontWeight: 'bold'
   },
-  dificult: {
+  hard: {
     background: theme.palette.colors.red
   },
-  medium: {
+  moderate: {
     background: theme.palette.colors.yellow
   },
   easy: {
@@ -50,6 +50,7 @@ const styles = (theme) => ({
 })
 
 const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes }) => {
+  console.log(difficulty)
   return (
     <div
       className={classes.root}
@@ -58,7 +59,8 @@ const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes }) => 
         backgroundSize: 'cover'
       }}
     >
-      <section className={`${classes.topSection} ${classes[difficulty]}`}>
+      <section className={classes.topSection}>
+        {difficulty}
       </section>
       <section className={classes.cardBottom}>
       <Typography className={classes.textStyle} gutterBottom variant="title" component="h2">
@@ -67,7 +69,9 @@ const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes }) => 
       <Typography className={classes.rates} component="div">
         <span className={classes.textStyle}>
           {
-            new Array(rate).fill(1).map(star => <StartIcon className={classes.startIcon}/>)
+            new Array(rate).fill(1).map((_, index) =>
+              <StartIcon key={index} className={classes.startIcon}/>
+              )
           }
         </span>
         <span className={classes.textStyle}>{time}</span>
