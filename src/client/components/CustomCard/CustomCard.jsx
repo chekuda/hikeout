@@ -5,8 +5,9 @@ import { withStyles } from '@material-ui/core/styles'
 const styles = (theme) => ({
   root: {
     position: 'relative',
-    margin: '5px 0',
-    height: '150px'
+    margin: '5px 5px',
+    height: '150px',
+    borderRadius: '5px'
   },
   topSection: {
     position: 'absolute',
@@ -35,7 +36,8 @@ const styles = (theme) => ({
     color: theme.palette.colors.white
   },
   rates: {
-    marginRight: '10px'
+    marginRight: '10px',
+    fontWeight: 'bold'
   }
 })
 
@@ -51,7 +53,7 @@ const CustomCard = ({ bkImage, title, rate, difficulty, time, classes }) => {
       <section className={`${classes.topSection} ${classes[difficulty]}`}>
       </section>
       <section className={classes.cardBottom}>
-      <Typography className={classes.textWhite} gutterBottom variant="headline" component="h2">
+      <Typography className={classes.textWhite} gutterBottom variant="title" component="h2">
         {title}
       </Typography>
       <Typography className={classes.textWhite} component="div">

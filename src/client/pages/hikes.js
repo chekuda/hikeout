@@ -1,6 +1,7 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Router from 'next/router';
+import React from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import Router from 'next/router'
+import Typography from '@material-ui/core/Typography'
 
 import CustomCard from '../components/CustomCard'
 
@@ -19,21 +20,21 @@ const styles = theme => ({
   media: {
     height: '150px'
   }
-});
+})
 
 class Hikes extends React.Component {
   handleRedirect() {
-    Router.replace('/guest-user');
+    Router.replace('/guest-user')
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props
 
     return (
       <div className={classes.root}>
-        <section className={classes.topSection}>
+        <Typography className={classes.topSection} variant="title" component="h1">
           Recomended Hikes
-        </section>
+        </Typography>
         <section className='hike-lists'>
           <CustomCard
             bkImage='https://i0.wp.com/clarens.co.za/wp-content/uploads/2018/03/hiking-trails-clarens.jpg'
@@ -44,7 +45,7 @@ class Hikes extends React.Component {
           />
         </section>
       </div>
-    );
+    )
   }
 }
 
