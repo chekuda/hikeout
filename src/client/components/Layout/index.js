@@ -19,7 +19,7 @@ export default class Layout extends Component {
 
     return (
       <div className="LayoutWrapper">
-        <AppBar toggleDrawer={this.toggleDrawer} title={title} />
+        <AppBar toggleDrawer={this.toggleDrawer} title={title}/>
         <Drawer open={this.state.open} toggleDrawer={this.toggleDrawer} />
         {children}
       </div>

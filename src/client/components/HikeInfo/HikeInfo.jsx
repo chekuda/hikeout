@@ -5,8 +5,9 @@ import Typography from '@material-ui/core/Typography'
 const styles = (theme) => ({
   topImage: {
     position: 'relative',
-    margin: 0,
+    margin: '10px 5px',
     height: '200px',
+    borderRadius: '5px',
     boxShadow: `0 5px 5px ${theme.palette.colors.darkGrey}`
   },
   description: {

@@ -21,7 +21,11 @@ const styles = theme => ({
     fontWeight: 'bold',
     color: theme.palette.primary.dark,
     textTransform: 'uppercase',
-    letterSpacing: '2.5px'
+    letterSpacing: '2.5px',
+    position: 'fixed',
+    zIndex: 10,
+    top: '50px',
+    background: theme.palette.colors.white
   },
   media: {
     height: '150px'
@@ -34,6 +38,9 @@ const styles = theme => ({
     left: '50%',
     top: '50%',
     transform: 'translate(-50%, -50%)'
+  },
+  hikeList: {
+    paddingTop: "130px"
   }
 });
 
@@ -71,7 +78,7 @@ class Hikes extends React.Component {
               <CircularProgress className={classes.progress} size={100} color="primary" />
             </div>
           ) : (
-            <section className="hike-lists">
+            <section className={classes.hikeList}>
               {this.state.hikeList.map(hike => {
                 return (
                   <CustomCard
