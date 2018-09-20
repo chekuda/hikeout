@@ -69,7 +69,7 @@ class Hike extends Component {
             </Tabs>
           </AppBar>
           { tabEnable === 0 && <HikeInfo hike={currentHike}/>}
-          { tabEnable === 1 && <HikeSights hike={currentHike}/>}
+          { tabEnable === 1 && <HikeSights sights={currentHike.sights}/>}
       </Layout>
     )
   }

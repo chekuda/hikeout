@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
+import CustomCard from '../CustomCard'
 
 const styles = (theme) => ({
   topImage: {
@@ -19,20 +19,22 @@ const styles = (theme) => ({
 
 class HikeSights extends Component {
   render(){
-    const { classes, hike } = this.props
+    const { classes, sights } = this.props
+    console.log(sights)
     return(
       <div className={classes.root}>
-        <section
-          className={classes.topImage}
-          style={{
-            background: `url(${hike.imageList[0]}) no-repeat`,
-            backgroundSize: 'cover'
-          }}
-        >
-        </section>
-        <Typography className={classes.description} variant="body1">
-          {hike.description}
-        </Typography>
+        <section className="hike-lists">
+              {
+                sights.map((sight, index) => {
+                return (
+                  <CustomCard
+                    key={index}
+                    bkImage={sight.imageList[0]}
+                    title={sight.name}
+                  />
+                );
+              })}
+            </section>
       </div>
     )
   }
