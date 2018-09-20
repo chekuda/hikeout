@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Router from 'next/router';
 
+const logoPNG = require('../static/logo.png');
+
 const styles = theme => ({
   root: {
     height: '100vh',
@@ -20,6 +22,10 @@ const styles = theme => ({
   },
   buttonItem: {
     borderRadius: 0
+  },
+  imageContainer: {
+    textAlign: 'center',
+    paddingTop: '60px'
   }
 });
 
@@ -33,6 +39,9 @@ class Index extends React.Component {
 
     return (
       <div className={classes.root}>
+        <section className={classes.imageContainer}>
+          <img src={logoPNG} alt="Logo PNG" width="150" />
+        </section>
         <section className={classes.buttonContiner}>
           <Grid container>
             <Grid item xs={6}>
