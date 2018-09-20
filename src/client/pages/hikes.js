@@ -24,7 +24,7 @@ const styles = theme => ({
     letterSpacing: '2.5px',
     position: 'fixed',
     zIndex: 10,
-    top: '50px',
+    top: '60px',
     background: theme.palette.colors.white
   },
   media: {
@@ -40,7 +40,7 @@ const styles = theme => ({
     transform: 'translate(-50%, -50%)'
   },
   hikeList: {
-    paddingTop: "130px"
+    paddingTop: "150px"
   }
 });
 
