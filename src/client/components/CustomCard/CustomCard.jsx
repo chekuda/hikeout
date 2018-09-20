@@ -5,9 +5,10 @@ import { withStyles } from '@material-ui/core/styles'
 const styles = (theme) => ({
   root: {
     position: 'relative',
-    margin: '5px 5px',
+    margin: '10px 5px',
     height: '150px',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    boxShadow: `0 5px 5px ${theme.palette.colors.darkGrey}`
   },
   topSection: {
     position: 'absolute',
