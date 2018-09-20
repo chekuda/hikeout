@@ -33,7 +33,7 @@ class Hike extends Component {
   componentDidMount() {
     const currentHikeId = new URL(window.location).searchParams.get('id');
 
-    fetch(`/api/hikes/${currentHikeId}`)
+    fetch(`/api-hikeout/hikes/${currentHikeId}`)
       .then(res => res.json())
       .then(data => {
         this.setState({

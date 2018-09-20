@@ -42,7 +42,7 @@ class Hikes extends React.Component {
   };
 
   componentDidMount() {
-    fetch('/api/hikes')
+    fetch('/api-hikeout/hikes')
       .then(res => res.json())
       .then(data => {
         this.setState({
