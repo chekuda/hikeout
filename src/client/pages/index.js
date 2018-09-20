@@ -9,7 +9,7 @@ const styles = theme => ({
     height: '100vh',
     width: '100vw',
     background:
-      'url(https://images.pexels.com/photos/868097/pexels-photo-868097.jpeg?auto=compress&cs=tinysrgb&h=350) no-repeat',
+      'url("https://images.pexels.com/photos/746386/pexels-photo-746386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   },
