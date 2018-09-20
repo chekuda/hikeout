@@ -49,8 +49,7 @@ const styles = (theme) => ({
   }
 })
 
-const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes }) => {
-  console.log(difficulty)
+const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes, handleClick }) => {
   return (
     <div
       className={classes.root}
@@ -58,6 +57,7 @@ const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes }) => 
         background: `linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(${bkImage}) no-repeat`,
         backgroundSize: 'cover'
       }}
+      onClick={handleClick}
     >
       <section className={classes.topSection}>
         {difficulty}
