@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
@@ -20,22 +20,20 @@ const styles = (theme) => ({
 class HikeInfo extends Component {
   render(){
     const { classes, hike } = this.props
-    console.log(hike)
     return(
-      <Fragment>
-          <section className={classes.topImage}
+      <div className={classes.root}>
+        <section
+          className={classes.topImage}
           style={{
             background: `url(${hike.imageList[0]}) no-repeat`,
             backgroundSize: 'cover'
           }}
-          >
-          </section>
-          <section>
-            <Typography className={classes.description} variant="bodi1">
-              {hike.description}
-            </Typography>
-          </section>
-      </Fragment>
+        >
+        </section>
+        <Typography className={classes.description} variant="body1">
+          {hike.description}
+        </Typography>
+      </div>
     )
   }
 }

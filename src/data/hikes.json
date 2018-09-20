@@ -96,6 +96,15 @@
       "routes": [{
         "name": "first",
         "hours": 100
+      }],
+      "sights": [{
+        "imageList": ["https://www.kids-world-travel-guide.com/images/xaustralia_sydney_shutterstock_src50.jpg.pagespeed.ic.DuhRmokiyI.jpg"],
+        "name": "Nice Zone",
+        "description": "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      }, {
+        "imageList": ["https://media-cdn.tripadvisor.com/media/photo-w/04/6a/2d/fc/xplor-adventure-park.jpg"],
+        "name": "Xplor",
+        "description": "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
       }]
     },
     {

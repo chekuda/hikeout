@@ -5,8 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import HikeInfo from '../components/HikeInfo';
-
+import HikeInfo from '../components/HikeInfo'
+import HikeSights from '../components/HikeSights/HikeSights'
 import Layout from '../components/Layout';
 
 const styles = theme => ({
@@ -57,16 +57,21 @@ class Hike extends Component {
         <Typography className={classes.topSection} variant="title" component="h1">
           {currentHike.title}
         </Typography>
-        <AppBar position="static" className={classes.root}>
-          <Tabs value={tabEnable} onChange={this.handleChange} indicatorColor="primary" fullWidth>
-            <Tab label="Overview" />
-            <Tab label="Sights" />
-          </Tabs>
-        </AppBar>
-        {tabEnable === 0 && <HikeInfo hike={currentHike} />}
-        {tabEnable === 1 && <div>SECOND SLIDE</div>}
+          <AppBar position="static" className={classes.root}>
+            <Tabs
+              value={tabEnable}
+              onChange={this.handleChange}
+              indicatorColor="primary"
+              fullWidth
+            >
+              <Tab label="Overview" />
+              <Tab label="Sights" />
+            </Tabs>
+          </AppBar>
+          { tabEnable === 0 && <HikeInfo hike={currentHike}/>}
+          { tabEnable === 1 && <HikeSights sights={currentHike.sights}/>}
       </Layout>
-    );
+    )
   }
 }
 

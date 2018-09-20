@@ -59,9 +59,12 @@ const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes, handl
       }}
       onClick={handleClick}
     >
-      <section className={classes.topSection}>
-        {difficulty}
-      </section>
+      {
+        difficulty &&
+        <section className={classes.topSection}>
+          {difficulty}
+        </section>
+      }
       <section className={classes.cardBottom}>
       <Typography className={classes.textStyle} gutterBottom variant="title" component="h2">
         {title}
@@ -74,7 +77,7 @@ const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes, handl
               )
           }
         </span>
-        <span className={classes.textStyle}>{time}</span>
+        { time && <span className={classes.textStyle}>{time}</span> }
       </Typography>
       </section>
     </div>
