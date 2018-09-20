@@ -108,7 +108,7 @@ class Index extends React.Component {
           onClick={this.setUserPlan}
           variant="raised"
           color="primary"
-          fullWidth="true"
+          fullWidth={true}
         >
           Create a Hike Plan
         </Button>
@@ -124,7 +124,7 @@ class Index extends React.Component {
       <Fragment>
         {questions.filter((item, index) => index === questionIndex).map((question, index) => {
           return (
-            <Fragment>
+            <Fragment key={`question-${index}`}>
               <Typography
                 className={classes.title}
                 gutterBottom={true}
