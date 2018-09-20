@@ -19,6 +19,15 @@ const theme = createMuiTheme({
       main: '#FACC6B',
       dark: '#F49F0A'
     }
+  },
+  typography: {
+    fontFamily: '"Oswald", serif',
+    body1: {
+      fontFamily: '"Open Sans", serif'
+    },
+    body2: {
+      fontFamily: '"Open Sans", serif'
+    }
   }
 });
 

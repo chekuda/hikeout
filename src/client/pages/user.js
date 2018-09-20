@@ -14,8 +14,8 @@ const styles = theme => ({
     position: 'absolute',
     height: '100vh',
     width: '100vw',
-    backgroundImage:
-      'url("https://cdn.runrepeat.com/storage/uploads/research/Award%20-%20Most%20Livable%20Hiking%20Towns/Hiking%20Town%201.jpg")',
+    background:
+      'linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),url("https://images.pexels.com/photos/746386/pexels-photo-746386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -24,7 +24,11 @@ const styles = theme => ({
   content: {
     position: 'absolute',
     height: '100vh',
-    width: '100vw'
+    width: '100vw',
+    color: ''
+  },
+  title: {
+    padding: '60px 0 10px'
   }
 });
 
@@ -38,7 +42,12 @@ class Index extends React.Component {
       <Fragment className={classes.root}>
         <div className={classes.backgroundImage} />
         <div className={classes.content}>
-          <Typography gutterBottom={true} align="center" variant="display1">
+          <Typography
+            className={classes.title}
+            gutterBottom={true}
+            align="center"
+            variant="display1"
+          >
             MEET YOUR GUIDE
           </Typography>
         </div>
