@@ -1,9 +1,16 @@
 import React, { Component, Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import AppBar from '@material-ui/core/AppBar'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 
+import HikeInfo from '../components/HikeInfo'
 
 const styles = theme => ({
+  root: {
+    backgroundColor: theme.palette.colors.white
+  },
   topSection: {
     width: '100%',
     padding: '30px',
@@ -17,7 +24,9 @@ const styles = theme => ({
 })
 
 class Hike extends Component {
-  state = {}
+  state = {
+    tabEnable: 0
+  }
 
   componentDidMount(){
     const currentHikeId = new URL(window.location).searchParams.get('id')
@@ -31,17 +40,36 @@ class Hike extends Component {
       })
   }
 
+  handleChange = (_, value) => {
+    this.setState({ tabEnable: value })
+  }
+
   render() {
     const { classes } = this.props
-    if(!this.state.currentHike) return null
+    const { tabEnable, currentHike } = this.state
+
+    if(!currentHike) return null
 
     return (
       <Fragment>
         <Typography className={classes.topSection} variant="title" component="h1">
             {
-              this.state.currentHike.title
+              currentHike.title
             }
         </Typography>
+          <AppBar position="static" className={classes.root}>
+            <Tabs
+              value={tabEnable}
+              onChange={this.handleChange}
+              indicatorColor="primary"
+              fullWidth
+            >
+              <Tab label="Overview" />
+              <Tab label="Sights" />
+            </Tabs>
+          </AppBar>
+          { tabEnable === 0 && <HikeInfo hike={currentHike}/>}
+          { tabEnable === 1 && <div>SECOND SLIDE</div> }
       </Fragment>
     )
   }
