@@ -14,7 +14,7 @@ import { myFetchId } from '../helpers/fetchData'
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.colors.white,
-    paddingTop: '150px'
+    paddingTop: '135px'
   },
   topSection: {
     width: '100%',
@@ -27,7 +27,7 @@ const styles = theme => ({
     letterSpacing: '2.5px',
     position: 'fixed',
     zIndex: 10,
-    top: '60px',
+    top: '50px',
     background: theme.palette.colors.white
   }
 });
