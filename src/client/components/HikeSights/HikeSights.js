@@ -17,7 +17,7 @@ const styles = (theme) => ({
   }
 })
 
-class HikeInfo extends Component {
+class HikeSights extends Component {
   render(){
     const { classes, hike } = this.props
     return(
@@ -38,4 +38,4 @@ class HikeInfo extends Component {
   }
 }
 
-export default withStyles(styles)(HikeInfo)
+export default withStyles(styles)(HikeSights)

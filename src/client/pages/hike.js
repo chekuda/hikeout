@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 
 import HikeInfo from '../components/HikeInfo'
+import HikeSights from '../components/HikeSights/HikeSights';
 
 const styles = theme => ({
   root: {
@@ -69,7 +70,7 @@ class Hike extends Component {
             </Tabs>
           </AppBar>
           { tabEnable === 0 && <HikeInfo hike={currentHike}/>}
-          { tabEnable === 1 && <div>SECOND SLIDE</div> }
+          { tabEnable === 1 && <HikeSights hike={currentHike}/>}
       </Fragment>
     );
   }
