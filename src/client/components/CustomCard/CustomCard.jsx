@@ -2,6 +2,8 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 
+import StartIcon from '@material-ui/icons/Star'
+
 const styles = (theme) => ({
   root: {
     position: 'relative',
@@ -15,7 +17,7 @@ const styles = (theme) => ({
     width: '20px',
     height: '20px',
     right: 0,
-    margin: '10px',
+    margin: '5px',
     borderRadius: '50%',
     border: 'solid 1px #ffffff'
   },
@@ -33,16 +35,21 @@ const styles = (theme) => ({
     bottom: 0,
     margin: '10px'
   },
-  textWhite: {
-    color: theme.palette.colors.white
+  textStyle: {
+    color: theme.palette.colors.white,
+    fontWeight: 'bold',
+    margin: '5px;'
   },
   rates: {
-    marginRight: '10px',
-    fontWeight: 'bold'
+   display: 'flex',
+   alignItems: 'center'
+  },
+  startIcon: {
+    color: theme.palette.colors.yellow
   }
 })
 
-const CustomCard = ({ bkImage, title, rate, difficulty, time, classes }) => {
+const CustomCard = ({ bkImage, title, rate = 1, difficulty, time, classes }) => {
   return (
     <div
       className={classes.root}
@@ -54,11 +61,16 @@ const CustomCard = ({ bkImage, title, rate, difficulty, time, classes }) => {
       <section className={`${classes.topSection} ${classes[difficulty]}`}>
       </section>
       <section className={classes.cardBottom}>
-      <Typography className={classes.textWhite} gutterBottom variant="title" component="h2">
+      <Typography className={classes.textStyle} gutterBottom variant="title" component="h2">
         {title}
       </Typography>
-      <Typography className={classes.textWhite} component="div">
-        <span className={classes.rates}>{rate}</span> <span className={classes.rates}>{time}</span>
+      <Typography className={classes.rates} component="div">
+        <span className={classes.textStyle}>
+          {
+            new Array(rate).fill(1).map(star => <StartIcon className={classes.startIcon}/>)
+          }
+        </span>
+        <span className={classes.textStyle}>{time}</span>
       </Typography>
       </section>
     </div>
