@@ -11,7 +11,8 @@ const styles = theme => ({
     backgroundImage:
       'url("https://cdn.runrepeat.com/storage/uploads/research/Award%20-%20Most%20Livable%20Hiking%20Towns/Hiking%20Town%201.jpg")',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   },
   buttonContiner: {
     width: '100vw',
@@ -22,7 +23,7 @@ const styles = theme => ({
 
 class Index extends React.Component {
   handleRedirect() {
-    Router.replace('/guest-user');
+    Router.replace('/user');
   }
 
   render() {
