@@ -23,7 +23,8 @@ const styles = theme => ({
     bottom: 0
   },
   buttonItem: {
-    borderRadius: 0
+    borderRadius: 0,
+    padding: '10px'
   },
   imageContainer: {
     textAlign: 'center',
